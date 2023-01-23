@@ -79,7 +79,7 @@ function App() {
           text="del"
           func={(e) => {
             setInput("");
-            localStorage.setItem("last", "number");
+            localStorage.setItem("last", "simbol");
             localStorage.setItem("open", 0)
           }
         }
@@ -242,7 +242,7 @@ function App() {
           text="="
           func={(e) => {
             setInput(result)
-            localStorage.setItem("last", "number");
+            localStorage.setItem("last", "symbol");
             localStorage.setItem("open", 0)  
           }
         }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-localStorage.setItem("last", "number");
+localStorage.setItem("last", "simbol");
 localStorage.setItem("open", 0);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
