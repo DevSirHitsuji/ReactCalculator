@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(110, 110, 110);
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 90%;
+    max-width: 600px;
+    height: 95vh;
+    padding: 10px;
+
+    border-radius: 15px;
+    margin: 5px;
+
+    background-color: rgb(53, 53, 53);
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    
+    box-shadow: 1px 2px 2px 3px rgba(0, 0, 0, 0.61);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(207, 207, 207);
+}
+
+.copy {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+}
+
+.input {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px;
+    height: 100px;
+    text-align: end;
+    background-color: rgb(181, 240, 175);
+    margin-inline: 3px;
+    margin-top: 10px;
+
+    color: rgba(0, 0, 0, 0.555);
+}
+
+.result {
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+    font-size: 40px;
+
+    padding: 2px;
+    height: 50px;
+    text-align: end;
+    background-color: rgb(129, 190, 147);
+    margin-inline: 3px;
+    box-shadow: inset 0px 0px 5px 2px rgb(107, 168, 133);
+
+    color: rgba(0, 0, 0, 0.644);
+}
+
+.keyboard {
+    margin-top: 40px;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    width: 22%;
+    margin: 3px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.514);
+    background-color: rgb(143, 143, 143);
+    font-size: 90%;
+}
+
+.del {
+    background-color: rgb(126, 0, 0);
+}
+
+.simbol {
+    background-color: rgb(119, 119, 119);
+}
+
+.equal {
+    background-color: rgb(0, 68, 196);
+}
