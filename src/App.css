@@ -42,8 +42,13 @@ h1 {
     margin-inline: 3px;
     margin-top: 10px;
 
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    
     color: rgba(0, 0, 0, 0.555);
 }
+
 
 .result {
     border-end-end-radius: 10px;
