@@ -3,6 +3,11 @@ import './App.css'
 import Button from './components/Button/Button'
 import Show from './components/Show/Show'
 
+import click1Src from  './assets/sounds/click1.mp3'
+import click2Src from './assets/sounds/click2.mp3'
+import click3Src from './assets/sounds/click2.mp3'
+import clickDelSrc from './assets/sounds/clickDel.mp3'
+import clickEqualSrc from './assets/sounds/clickEqual.mp3'
 
 function App() {
   const [input, setInput] = useState('');
@@ -18,14 +23,12 @@ function App() {
   }, [input])
 
   
-  const click1 = new Audio('./assets/sounds/click1.mp3');
-  const clickNone = new Audio('./assets/sounds/click2.mp3');
-  const click3 = new Audio('./assets/sounds/click3.mp3');
+  const click1 = new Audio(click1Src);
+  const clickNone = new Audio(click2Src);
+  const click3 = new Audio(click3Src);
   const click = [click1, click3];
-  
-  const clickDel = new Audio('./assets/sounds/clickDel.mp3');
-  const clickClear = new Audio('./assets/sounds/clickClear.mp3');
-  const clickEqual = new Audio('./assets/sounds/clickEqual.mp3');
+  const clickDel = new Audio(clickDelSrc);
+  const clickEqual = new Audio(clickEqualSrc);
 
   return (
     <div className="App">
