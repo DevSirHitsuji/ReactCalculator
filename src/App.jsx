@@ -243,7 +243,7 @@ function App() {
           text="="
           func={(e) => {
             setInput(result)
-            localStorage.setItem("last", "symbol");
+            localStorage.setItem("last", "number");
             localStorage.setItem("open", 0)  
           }
         }
