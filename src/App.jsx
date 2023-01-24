@@ -18,14 +18,14 @@ function App() {
   }, [input])
 
   
-  const click1 = new Audio('./src/assets/sounds/click1.mp3');
-  const clickNone = new Audio('./src/assets/sounds/click2.mp3');
-  const click3 = new Audio('./src/assets/sounds/click3.mp3');
+  const click1 = new Audio('./assets/sounds/click1.mp3');
+  const clickNone = new Audio('./assets/sounds/click2.mp3');
+  const click3 = new Audio('./assets/sounds/click3.mp3');
   const click = [click1, click3];
   
-  const clickDel = new Audio('./src/assets/sounds/clickDel.mp3');
-  const clickClear = new Audio('./src/assets/sounds/clickClear.mp3');
-  const clickEqual = new Audio('./src/assets/sounds/clickEqual.mp3');
+  const clickDel = new Audio('./assets/sounds/clickDel.mp3');
+  const clickClear = new Audio('./assets/sounds/clickClear.mp3');
+  const clickEqual = new Audio('./assets/sounds/clickEqual.mp3');
 
   return (
     <div className="App">
@@ -41,7 +41,6 @@ function App() {
         input={result}
       />
 
-
       <div className="keyboard">
         <Button
           className="btn simbol"
@@ -53,7 +52,8 @@ function App() {
             if (last === "simbol"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
-              localStorage.setItem("open", (parseInt(open) + 1));;
+              localStorage.setItem("open", (parseInt(open) + 1));
+              localStorage.setItem("zero", true);
             }else {clickNone.play()}
           } 
         }
@@ -66,10 +66,11 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             const last = localStorage.getItem("last");
             const open = localStorage.getItem("open");
-            if (last === "number"){
+            if (last === "number" && parseInt(open) > 0){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "number");
               localStorage.setItem("open", (parseInt(open) - 1))
+              localStorage.setItem("asterisk", 0);
             }else {clickNone.play()}   
           }
         }
@@ -84,6 +85,7 @@ function App() {
             if (last === "number"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
+              localStorage.setItem("pointer", true)
             }else {clickNone.play()}   
           }
         }
@@ -98,6 +100,9 @@ function App() {
             setResult("");
             localStorage.setItem("last", "simbol");
             localStorage.setItem("open", 0)
+            localStorage.setItem("zero", false)
+            localStorage.setItem("asterisk", 2);
+            localStorage.setItem("pointer", true)
           }
         }
         />
@@ -109,6 +114,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -120,6 +126,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -131,6 +138,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -144,6 +152,7 @@ function App() {
             if (last === "number"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
+              localStorage.setItem("pointer", true)
             }else {clickNone.play()} 
           }
         }
@@ -156,6 +165,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -167,6 +177,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -178,6 +189,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -186,12 +198,15 @@ function App() {
           className="btn simbol"
           text="*"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
+            click[Math.floor(Math.random() * 2)].play();
             const last = localStorage.getItem("last");
-            if (last === "number"){
+            const asterisk = localStorage.getItem("asterisk");
+            if (last === "number" || parseInt(asterisk) < 2) {
               setInput(input + e.currentTarget.id);
+              localStorage.setItem("asterisk", (parseInt(asterisk) + 1));
               localStorage.setItem("last", "simbol");
-            } 
+              localStorage.setItem("pointer", true)
+            }else {clickNone.play()}
           }
         }
         />
@@ -203,6 +218,8 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("zero", true);
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -214,6 +231,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -225,6 +243,7 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             setInput(input + e.currentTarget.id);
             localStorage.setItem("last", "number");
+            localStorage.setItem("asterisk", 0);
           }
         }
         />
@@ -238,6 +257,7 @@ function App() {
             if (last === "number"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
+              localStorage.setItem("pointer", true)
             }else {clickNone.play()} 
           }
         }
@@ -249,9 +269,11 @@ function App() {
           func={(e) => {
             click[Math.floor(Math.random() * 2)].play()
             const last = localStorage.getItem("last");
-            if (last === "number"){
+            const pointer = localStorage.getItem("pointer");
+            if (last === "number" && pointer === "true"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
+              localStorage.setItem("pointer", false)
             }else {clickNone.play()} 
           }
         }
@@ -261,9 +283,15 @@ function App() {
           className="btn number"
           text="0"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
+            const zero = localStorage.getItem("zero");
+
+            if (zero === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }else {clickNone.play()}
           }
         }
         />
@@ -277,11 +305,14 @@ function App() {
               setInput("(1/0)")
               localStorage.setItem("last", "number");
               localStorage.setItem("open", 0)  
-            }else if (toString(result === "NaN")) {
+              localStorage.setItem("pointer", true)
+            }else if (toString(result) === "NaN") {
               setInput("")
               setResult("")
               localStorage.setItem("last", "simbol");
               localStorage.setItem("open", 0);
+              localStorage.setItem("zero", false)
+              localStorage.setItem("pointer", true)
             }else {
               setInput(result)
               localStorage.setItem("last", "number");
@@ -301,6 +332,7 @@ function App() {
             if (last === "number"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
+              localStorage.setItem("pointer", true)
             }else {clickNone.play()} 
           }
         }
