@@ -74,6 +74,7 @@ function App() {
               localStorage.setItem("last", "number");
               localStorage.setItem("open", (parseInt(open) - 1))
               localStorage.setItem("asterisk", 0);
+              localStorage.setItem("number", false);
             }else {clickNone.play()}   
           }
         }
@@ -88,7 +89,8 @@ function App() {
             if (last === "number"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
-              localStorage.setItem("pointer", true)
+              localStorage.setItem("pointer", true);
+              localStorage.setItem("number", true);
             }else {clickNone.play()}   
           }
         }
@@ -106,6 +108,8 @@ function App() {
             localStorage.setItem("zero", false)
             localStorage.setItem("asterisk", 2);
             localStorage.setItem("pointer", true)
+            localStorage.setItem("number", true);
+
           }
         }
         />
@@ -114,10 +118,13 @@ function App() {
           className="btn number"
           text="7"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -126,10 +133,13 @@ function App() {
           className="btn number"
           text="8"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -138,10 +148,13 @@ function App() {
           className="btn number"
           text="9"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -156,6 +169,7 @@ function App() {
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
               localStorage.setItem("pointer", true)
+              localStorage.setItem("number", true);
             }else {clickNone.play()} 
           }
         }
@@ -165,10 +179,13 @@ function App() {
           className="btn number"
           text="4"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -177,10 +194,13 @@ function App() {
           className="btn number"
           text="5"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -189,10 +209,13 @@ function App() {
           className="btn number"
           text="6"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -209,6 +232,7 @@ function App() {
               localStorage.setItem("asterisk", (parseInt(asterisk) + 1));
               localStorage.setItem("last", "simbol");
               localStorage.setItem("pointer", true)
+              localStorage.setItem("number", true);
             }else {clickNone.play()}
           }
         }
@@ -218,11 +242,13 @@ function App() {
           className="btn number"
           text="1"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("zero", true);
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -231,10 +257,13 @@ function App() {
           className="btn number"
           text="2"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -243,10 +272,13 @@ function App() {
           className="btn number"
           text="3"
           func={(e) => {
-            click[Math.floor(Math.random() * 2)].play()
-            setInput(input + e.currentTarget.id);
-            localStorage.setItem("last", "number");
-            localStorage.setItem("asterisk", 0);
+            if (localStorage.getItem("number") === "true") {
+              click[Math.floor(Math.random() * 2)].play()
+              setInput(input + e.currentTarget.id);
+              localStorage.setItem("last", "number");
+              localStorage.setItem("zero", true);
+              localStorage.setItem("asterisk", 0);
+            }
           }
         }
         />
@@ -261,6 +293,7 @@ function App() {
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
               localStorage.setItem("pointer", true)
+              localStorage.setItem("number", true);
             }else {clickNone.play()} 
           }
         }
@@ -273,10 +306,11 @@ function App() {
             click[Math.floor(Math.random() * 2)].play()
             const last = localStorage.getItem("last");
             const pointer = localStorage.getItem("pointer");
-            if (last === "number" && pointer === "true"){
+            if (last === "number" && pointer === "true" && localStorage.getItem("number") === "true"){
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
               localStorage.setItem("pointer", false)
+              localStorage.setItem("number", true);
             }else {clickNone.play()} 
           }
         }
@@ -288,7 +322,7 @@ function App() {
           func={(e) => {
             const zero = localStorage.getItem("zero");
 
-            if (zero === "true") {
+            if (zero === "true" && localStorage.getItem("number") === "true") {
               click[Math.floor(Math.random() * 2)].play()
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "number");
@@ -336,6 +370,7 @@ function App() {
               setInput(input + e.currentTarget.id);
               localStorage.setItem("last", "simbol");
               localStorage.setItem("pointer", true)
+              localStorage.setItem("number", true);
             }else {clickNone.play()} 
           }
         }
